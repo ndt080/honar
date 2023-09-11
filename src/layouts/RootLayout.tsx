@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 function RootLayout() {
   return (
     <div className="w-screen h-full flex justify-center items-start">
-      <div className="max-w-screen-xl w-full h-full grid grid-rows-[auto_1fr_auto] grid-cols-1">
+      <div className="max-w-screen-2xl w-full h-full grid grid-rows-[auto_1fr_auto] grid-cols-1 px-[12px]">
         <Header />
         <Outlet />
         <Footer />

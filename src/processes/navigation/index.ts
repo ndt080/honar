@@ -1,6 +1,8 @@
 import routes from '@processes/navigation/routes';
 import { createBrowserRouter } from 'react-router-dom';
 
+import { default as Navbar } from './components/Navbar.tsx';
+
 const Router = createBrowserRouter([
   {
     path: '',
@@ -9,4 +11,4 @@ const Router = createBrowserRouter([
   },
 ]);
 
-export { Router };
+export { Navbar, Router };
