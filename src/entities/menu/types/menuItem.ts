@@ -1,5 +1,5 @@
 interface MenuItem {
-  id: number | string;
+  id: string;
   title: string;
   path: string;
 }

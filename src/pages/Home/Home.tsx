@@ -1,5 +1,5 @@
 function Component() {
-  return <main>{}</main>;
+  return <main className="bg-white w-full h-full"></main>;
 }
 
 export { Component };
