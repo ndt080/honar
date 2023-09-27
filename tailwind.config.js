@@ -56,11 +56,16 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        'primary-accent': 'hsl(38, 100%, 52%)',
+        'second-accent': 'hsl(9, 100%, 56%)',
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      backgroundImage: {
+        tonal: 'linear-gradient(90deg,rgba(255,160,51,0.75),rgba(228,35,28,0.4))',
       },
       keyframes: {
         'accordion-down': {

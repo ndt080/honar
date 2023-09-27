@@ -11,7 +11,12 @@ export const pageApi = createApi({
     fetchPageList: builder.query<Page[], string>({
       query: () => ({ url: ENDPOINTS.PAGE_LIST }),
     }),
+    fetchPageByPath: builder.query<Page, string>({
+      query: (path: string) => ({
+        url: ENDPOINTS.PAGE.replace(':path', encodeURIComponent(path)),
+      }),
+    }),
   }),
 });
 
-export const { useFetchPageListQuery } = pageApi;
+export const { useFetchPageListQuery, useFetchPageByPathQuery } = pageApi;

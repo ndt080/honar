@@ -5,7 +5,7 @@ const API_SERVICE = 'api/collections';
 
 const BASE_ENDPOINTS = {
   PAGE_LIST: 'pages/records', // GET
-  PAGE: 'pages/records/:id', // GET
+  PAGE: 'pages/:path', // GET
 };
 
 export const ENDPOINTS = generateEndpointsPath(

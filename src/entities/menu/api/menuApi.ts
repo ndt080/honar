@@ -1,7 +1,6 @@
+import { PagingData } from '@app/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import urlJoin from 'url-join';
-
-import { PagingData } from '@/app';
 
 import { MenuItem } from '../types';
 import { ENDPOINTS } from '../values/endpoints.ts';

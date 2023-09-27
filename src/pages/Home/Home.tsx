@@ -1,5 +1,11 @@
+import { HomeCard } from '@features/HomeCard';
+
 function Component() {
-  return <main className="bg-white w-full h-full"></main>;
+  return (
+    <main className="bg-white h-full pt-2.5">
+      <HomeCard />
+    </main>
+  );
 }
 
 export { Component };

@@ -15,7 +15,7 @@ function Header() {
       <div className="flex items-center justify-between md:justify-center gap-3 w-full h-full flex-grow">
         <div className="flex items-center justify-center w-full h-fit">
           <Suspense fallback={<NavbarSkeleton />}>
-            <Navbar open={open} />
+            <Navbar open={open} onClose={() => setOpen(false)} />
           </Suspense>
         </div>
 

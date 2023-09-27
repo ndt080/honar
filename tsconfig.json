@@ -7,6 +7,9 @@
       "DOM",
       "DOM.Iterable"
     ],
+    "types": [
+      "server/pb_data/types.d.ts"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
