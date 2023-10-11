@@ -1,10 +1,14 @@
+import { Image } from '@entities/image';
+
 interface Coach {
   id: string;
   name: string;
-  position: string;
-  image: string;
-  dan: string;
   description: string;
+  dan: string;
+  position: string;
+  preview: Image;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export type { Coach };

@@ -1,9 +1,13 @@
 interface PagingData<TData = unknown> {
-  page: number;
-  perPage: number;
-  totalItems: number;
-  totalPages: number;
-  items: TData[];
+  data: TData[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
 }
 
 export type { PagingData };

@@ -26,7 +26,7 @@ function Navbar({ open = false, onClose }: NavbarProps) {
           open && 'visible opacity-100 bg-background p-2.5 scale-100',
         )}
       >
-        {data.items.map((item) => (
+        {data.map((item) => (
           <li key={item.id}>
             <Link
               className={cn(

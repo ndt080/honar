@@ -1,6 +1,5 @@
 import { PagingData } from '@app/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import urlJoin from 'url-join';
 
 import { MenuItem } from '../types';
 import { ENDPOINTS } from '../values/endpoints.ts';
@@ -10,8 +9,11 @@ export const menuApi = createApi({
   refetchOnMountOrArgChange: false,
   baseQuery: fetchBaseQuery({}),
   endpoints: (builder) => ({
-    fetchMenuList: builder.query<PagingData<MenuItem>, string>({
-      query: () => ({ url: urlJoin(ENDPOINTS.MENU_LIST) }),
+    fetchMenuList: builder.query<MenuItem[], string>({
+      query: () => ({ url: ENDPOINTS.MENU_LIST }),
+      transformResponse({ data }: PagingData<MenuItem>) {
+        return data;
+      },
     }),
   }),
 });
