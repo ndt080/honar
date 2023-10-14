@@ -1,9 +1,9 @@
 import { AdditionalBlock } from '@entities/page';
 
-type ContactsBlock = Omit<AdditionalBlock, 'data'> & {
+type AdditionalContactsBlock = Omit<AdditionalBlock, 'data'> & {
   contacts: string;
   mapName: string;
   mapUrl: string;
 };
 
-export type { ContactsBlock };
+export type { AdditionalContactsBlock };

@@ -91,3 +91,16 @@ html, body, #root {
 * {
   box-sizing: border-box;
 }
+
+.text-with-links {
+  a {
+    color: hsl(9, 100%, 56%);
+    font-weight: 600;
+    transition: color 0.2s;
+
+    &:hover {
+      color: hsl(38, 100%, 52%);
+      transition: color 0.2s;
+    }
+  }
+}

@@ -1,3 +1,3 @@
 export * from './additionalBlock.ts';
-export * from './contactsBlock.ts';
+export * from './additionalContactsBlock.ts';
 export * from './page.ts';
