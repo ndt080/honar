@@ -1,7 +1,7 @@
 import { PagingData } from '@app/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { Page } from '../types';
+import { FooterData, Page } from '../types';
 import { ENDPOINTS } from '../values/endpoints.ts';
 
 export const pageApi = createApi({
@@ -23,7 +23,13 @@ export const pageApi = createApi({
         return page;
       },
     }),
+    fetchPageFooter: builder.query<FooterData, string>({
+      query: () => ({ url: encodeURI(ENDPOINTS.FOOTER) }),
+      transformResponse({ data }: { data: FooterData }) {
+        return data;
+      },
+    }),
   }),
 });
 
-export const { useFetchPageListQuery, useFetchPageByPathQuery } = pageApi;
+export const { useFetchPageListQuery, useFetchPageByPathQuery, useFetchPageFooterQuery } = pageApi;

@@ -1,7 +1,7 @@
 import { useFetchMenuListQuery } from '@entities/menu';
 import { cn } from '@shared/utils';
 import { memo, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { useClickAway } from 'react-use';
 
 interface NavbarProps {
@@ -28,16 +28,17 @@ function Navbar({ open = false, onClose }: NavbarProps) {
       >
         {data.map((item) => (
           <li key={item.id}>
-            <Link
+            <HashLink
               className={cn(
                 'group inline-flex h-9 w-max items-center rounded-md px-4 py-2',
                 'text-base font-normal w-full justify-start md:w-fit md:justify-center',
                 'transition-colors hover:bg-accent hover:text-accent-foreground',
               )}
               to={item.path}
+              smooth
             >
               {item.title}
-            </Link>
+            </HashLink>
           </li>
         ))}
       </ul>

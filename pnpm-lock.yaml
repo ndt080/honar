@@ -80,6 +80,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.16.0
     version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
+  react-router-hash-link:
+    specifier: ^2.4.3
+    version: 2.4.3(react-router-dom@6.16.0)(react@18.2.0)
   react-use:
     specifier: ^17.4.0
     version: 17.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -112,6 +115,9 @@ devDependencies:
   '@types/react-redux':
     specifier: ^7.1.26
     version: 7.1.26
+  '@types/react-router-hash-link':
+    specifier: ^2.4.7
+    version: 2.4.7
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.7.2
     version: 6.7.2(@typescript-eslint/parser@6.7.2)(eslint@8.50.0)(typescript@5.2.2)
@@ -1491,6 +1497,10 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
+  /@types/history@4.7.11:
+    resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
+    dev: true
+
   /@types/hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-YIQtIg4PKr7ZyqNPZObpxfHsHEmuB8dXCxd6qVcGuQVDK2bpsF7bYNnBJ4Nn7giuACZg+WewExgrtAJ3XnA4Xw==}
     dependencies:
@@ -1546,6 +1556,29 @@ packages:
       '@types/react': 18.2.22
       hoist-non-react-statics: 3.3.2
       redux: 4.2.1
+    dev: true
+
+  /@types/react-router-dom@5.3.3:
+    resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
+    dependencies:
+      '@types/history': 4.7.11
+      '@types/react': 18.2.22
+      '@types/react-router': 5.1.20
+    dev: true
+
+  /@types/react-router-hash-link@2.4.7:
+    resolution: {integrity: sha512-pyNv43V1TiK239WIIHF6sGoEbLbwSbnsPeoF1Y2nvFPMki/6ChQMtlKxzQH8qfkztemgrSQhGyi2SJXRIo65Dg==}
+    dependencies:
+      '@types/history': 4.7.11
+      '@types/react': 18.2.22
+      '@types/react-router-dom': 5.3.3
+    dev: true
+
+  /@types/react-router@5.1.20:
+    resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
+    dependencies:
+      '@types/history': 4.7.11
+      '@types/react': 18.2.22
     dev: true
 
   /@types/react@18.2.22:
@@ -3901,6 +3934,17 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-router: 6.16.0(react@18.2.0)
+    dev: false
+
+  /react-router-hash-link@2.4.3(react-router-dom@6.16.0)(react@18.2.0):
+    resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
+    peerDependencies:
+      react: '>=15'
+      react-router-dom: '>=4'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-router-dom: 6.16.0(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /react-router@6.16.0(react@18.2.0):

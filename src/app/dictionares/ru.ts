@@ -5,5 +5,6 @@ export default {
     partners: 'Наши партнёры',
     coaches: 'Преподавательский состав',
     contacts: 'Контакты',
+    sitemap: 'Карта сайта',
   },
 };

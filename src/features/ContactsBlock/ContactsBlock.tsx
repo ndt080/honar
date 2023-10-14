@@ -12,7 +12,7 @@ function ContactsBlock({ text = '', mapUrl = '', mapName = '' }: ContactsBlockPr
 
   return (
     <div className="w-full">
-      <BlockHeader title={t('_.contacts')} />
+      <BlockHeader id="contacts" title={t('_.contacts')} />
       <div className="w-full grid grid-cols-1 md:grid-cols-[1fr,40%] gap-5 md:gap-10 py-5">
         <iframe
           className="rounded w-full aspect-[16/6]"

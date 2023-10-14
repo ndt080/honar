@@ -5,16 +5,17 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 export interface BlockHeaderProps {
+  id?: string;
   title: string;
   viewAll?: boolean;
 }
 
-function BlockHeader({ title, viewAll }: BlockHeaderProps) {
+function BlockHeader({ id, title, viewAll }: BlockHeaderProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-between items-end gap-2.5 w-full select-none">
+    <div id={id} className="flex justify-between items-end gap-2.5 w-full select-none">
       <div className="font-black text-2xl md:text-3xl uppercase whitespace-nowrap">{title}</div>
 
       <div className="invisible md:visible w-full h-[1px] bg-primary/10"></div>

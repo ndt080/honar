@@ -60,7 +60,7 @@ function NewsCard({
           className={cn(
             'inline-block',
             'text-black font-semibold uppercase line-clamp-2 whitespace-normal',
-            'cursor-pointer hover:text-neutral-600 transition-colors duration-200',
+            'cursor-pointer hover:text-primary-accent transition-colors duration-200',
             size === 'sm' && 'text-sm',
             size === 'lg' && 'text-sm md:text-xl',
           )}

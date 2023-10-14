@@ -8,6 +8,7 @@ const BASE_QUERY = qs.stringify({ populate: 'deep' }, { encodeValuesOnly: true }
 const BASE_ENDPOINTS = {
   PAGE_LIST: `pages?${BASE_QUERY}`, // GET
   PAGE: `pages?filters[navigation][path]=:path&${BASE_QUERY}`, // GET
+  FOOTER: 'footer', // GET
 };
 
 export const ENDPOINTS = generateEndpointsPath(
