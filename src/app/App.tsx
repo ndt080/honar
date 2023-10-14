@@ -1,3 +1,6 @@
+import '@shared/plugins/i18next.ts';
+import '@shared/plugins/dayjs.ts';
+
 import { store } from '@app/store';
 import { Router } from '@processes/navigation';
 import { Helmet, HelmetProvider } from 'react-helmet-async';

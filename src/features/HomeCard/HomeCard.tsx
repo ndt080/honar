@@ -1,36 +1,35 @@
-import { currentPath } from '@app/helpers';
-import { useFetchPageByPathQuery } from '@entities/page';
-import { Button } from '@shared/ui/lib/button.tsx';
-import { Separator } from '@shared/ui/lib/separator.tsx';
-import { memo, useEffect } from 'react';
-import urlJoin from 'url-join';
+import { htmlToText } from '@app/helpers';
+import { cn } from '@shared/utils';
+import { useMemo } from 'react';
 
-import HomeCardContent from './HomeCardContent.tsx';
-import HomeCardImage from './HomeCardImage.tsx';
+interface HomeCardProps {
+  className?: string;
+  title: string;
+  description: string;
+}
 
-function HomeCard() {
-  const { data } = useFetchPageByPathQuery(currentPath());
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+function HomeCard({ className, title, description }: HomeCardProps) {
+  const descriptionText = useMemo(() => htmlToText(description), [description]);
 
   return (
-    data && (
-      <div className="w-full flex flex-col justify-center gap-5">
-        <Separator className="bg-black" />
-        <div className="flex flex-col-reverse justify-between items-end w-full gap-2.5 md:flex-row md:gap-10">
-          <HomeCardContent title={data?.title} description={data?.description}>
-            <Button className="bg-second-accent text-base py-3">Узнать о занятиях</Button>
-          </HomeCardContent>
-          <HomeCardImage src={urlJoin(import.meta.env.VITE_MEDIA_URL, data.preview?.url || '')} />
-        </div>
-        <Separator className="bg-black" />
+    <div
+      className={cn(
+        'flex items-end w-full h-full overflow-hidden rounded-2xl shadow select-none',
+        className,
+      )}
+      style={{
+        background:
+          'linear-gradient(90deg, rgba(255, 160, 51, 0.9), rgba(228, 35, 28, 0.6)), url("/images/header.webp") no-repeat',
+        backgroundPosition: '0 30%',
+        backgroundSize: 'cover',
+      }}
+    >
+      <div className="flex flex-col gap-2.5 w-full h-fit text-black m-5 md:m-10">
+        <h1 className="font-black text-2xl md:text-5xl">{title}</h1>
+        <p className="font-normal text-base md:text-2xl">{descriptionText}</p>
       </div>
-    )
+    </div>
   );
 }
 
-const MemoizedHomeCard = memo(HomeCard);
-
-export default MemoizedHomeCard;
+export default HomeCard;

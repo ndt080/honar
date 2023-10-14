@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 function RootLayout() {
   return (
-    <div className="w-screen h-full flex justify-center items-start">
+    <div className="w-screen h-full flex justify-center items-start overflow-x-hidden">
       <div className="max-w-screen-2xl w-full h-full grid grid-rows-[auto_1fr_auto] grid-cols-1 px-[12px]">
         <Header />
         <Outlet />
