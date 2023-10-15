@@ -11,11 +11,12 @@ import { Partner } from '@entities/partner';
 import { CoachesBlock } from '@features/CoachesBlock';
 import { ContactsBlock } from '@features/ContactsBlock';
 import { GalleryBlock } from '@features/GalleryBlock';
-import { HomeCard } from '@features/HomeCard';
 import { NewsBlock } from '@features/NewsBlock';
 import { PartnersBlock } from '@features/PartnersBlock';
-import HomePageSkeleton from '@pages/Home/HomePageSkeleton.tsx';
+import { PreviewCard } from '@features/PreviewCard';
 import { useMemo } from 'react';
+
+import HomePageSkeleton from './HomePageSkeleton.tsx';
 
 function HomePage() {
   const { data, isLoading } = useFetchPageByPathQuery(currentPath());
@@ -42,7 +43,7 @@ function HomePage() {
     <HomePageSkeleton />
   ) : (
     <main className="bg-white h-full pt-2.5 flex flex-col gap-10">
-      <HomeCard
+      <PreviewCard
         className="h-[420px] md:h-[520px] mt-2.5"
         title={data?.title ?? ''}
         description={data?.description ?? ''}

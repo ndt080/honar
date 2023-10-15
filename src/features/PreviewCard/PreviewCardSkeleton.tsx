@@ -5,7 +5,7 @@ interface HomeCardSkeletonProps {
   className?: string;
 }
 
-function HomeCardSkeleton({ className }: HomeCardSkeletonProps) {
+function PreviewCardSkeleton({ className }: HomeCardSkeletonProps) {
   return (
     <Skeleton
       className={cn('flex items-end w-full h-full overflow-hidden rounded-2xl shadow', className)}
@@ -18,4 +18,4 @@ function HomeCardSkeleton({ className }: HomeCardSkeletonProps) {
   );
 }
 
-export default HomeCardSkeleton;
+export default PreviewCardSkeleton;
