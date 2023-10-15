@@ -1,5 +1,6 @@
 import { useFetchLatestArticlesQuery } from '@entities/article';
 import { BlockHeader } from '@features/BlockHeader';
+import { NewsBlockSkeleton } from '@features/NewsBlock/index.ts';
 import { NewsCard } from '@features/NewsCard';
 import { RoutePath } from '@processes/navigation';
 import { Separator } from '@shared/ui/lib/separator.tsx';
@@ -9,9 +10,11 @@ import { useNavigate } from 'react-router-dom';
 function NewsBlock() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { data: articles = [] } = useFetchLatestArticlesQuery('');
+  const { data: articles = [], isLoading } = useFetchLatestArticlesQuery('');
 
-  return (
+  return isLoading ? (
+    <NewsBlockSkeleton />
+  ) : (
     <div className="block w-full">
       <BlockHeader title={t('_.clubNews')} viewAll onClick={() => navigate(RoutePath.Articles)} />
 
@@ -31,7 +34,7 @@ function NewsBlock() {
 
             <Separator className="hidden md:block bg-primary/10 h-auto" orientation="vertical" />
 
-            <div className="flex flex-col gap-3.5 w-full md:w-[300px]">
+            <div className="flex flex-col gap-3.5 w-full md:w-[300px] md:min-w-[300px]">
               {articles.map(({ title, publishedAt, description, image, id }, index) => {
                 return index > 0 ? (
                   <NewsCard

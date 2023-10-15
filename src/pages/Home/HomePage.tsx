@@ -12,14 +12,13 @@ import { CoachesBlock } from '@features/CoachesBlock';
 import { ContactsBlock } from '@features/ContactsBlock';
 import { GalleryBlock } from '@features/GalleryBlock';
 import { HomeCard } from '@features/HomeCard';
-import { NewsBlock, NewsBlockSkeleton } from '@features/NewsBlock';
+import { NewsBlock } from '@features/NewsBlock';
 import { PartnersBlock } from '@features/PartnersBlock';
-import { Suspense, useMemo } from 'react';
-
-import GalleryBlockSkeleton from '../../features/GalleryBlock/GalleryBlockSkeleton.tsx';
+import HomePageSkeleton from '@pages/Home/HomePageSkeleton.tsx';
+import { useMemo } from 'react';
 
 function HomePage() {
-  const { data } = useFetchPageByPathQuery(currentPath());
+  const { data, isLoading } = useFetchPageByPathQuery(currentPath());
 
   const blocks = useMemo<AdditionalBlock[]>(() => data?.additional ?? [], [data]);
 
@@ -39,24 +38,18 @@ function HomePage() {
     );
   }, [blocks]);
 
-  return (
+  return isLoading ? (
+    <HomePageSkeleton />
+  ) : (
     <main className="bg-white h-full pt-2.5 flex flex-col gap-10">
       <HomeCard
         className="h-[420px] md:h-[520px] mt-2.5"
         title={data?.title ?? ''}
         description={data?.description ?? ''}
       />
-
-      <Suspense fallback={<NewsBlockSkeleton />}>
-        <NewsBlock />
-      </Suspense>
-
+      <NewsBlock />
       <CoachesBlock items={coaches} />
-
-      <Suspense fallback={<GalleryBlockSkeleton />}>
-        <GalleryBlock />
-      </Suspense>
-
+      <GalleryBlock />
       <ContactsBlock text={contacts.contacts} mapName={contacts.mapName} mapUrl={contacts.mapUrl} />
       <PartnersBlock items={partners} />
     </main>

@@ -2,15 +2,18 @@ import './GalleryBlock.scss';
 
 import { useFetchGalleryPreviewQuery } from '@entities/image';
 import { BlockHeader } from '@features/BlockHeader';
+import { GalleryBlockSkeleton } from '@features/GalleryBlock/index.ts';
 import { cn } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 import urlJoin from 'url-join';
 
 function GalleryBlock() {
   const { t } = useTranslation();
-  const { data: sources = [] } = useFetchGalleryPreviewQuery('');
+  const { data: sources = [], isLoading } = useFetchGalleryPreviewQuery('');
 
-  return (
+  return isLoading ? (
+    <GalleryBlockSkeleton />
+  ) : (
     <div className="w-full">
       <BlockHeader
         id="gallery"
