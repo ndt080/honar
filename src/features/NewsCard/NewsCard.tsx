@@ -37,7 +37,7 @@ function NewsCard({
 
   return (
     <article className={cn('w-full flex flex-col gap-1.5', className)}>
-      <div className="aspect-[16/8] w-full rounded overflow-hidden">
+      <div className="aspect-[16/8] w-full h-full rounded overflow-hidden">
         <img
           className="object-cover object-center w-full h-full"
           src={urlJoin(import.meta.env.VITE_MEDIA_URL, image)}

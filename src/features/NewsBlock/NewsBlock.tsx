@@ -1,16 +1,20 @@
 import { useFetchLatestArticlesQuery } from '@entities/article';
 import { BlockHeader } from '@features/BlockHeader';
 import { NewsCard } from '@features/NewsCard';
+import { RoutePath } from '@processes/navigation';
 import { Separator } from '@shared/ui/lib/separator.tsx';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 function NewsBlock() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { data: articles = [] } = useFetchLatestArticlesQuery('');
 
   return (
     <div className="block w-full">
-      <BlockHeader title={t('_.clubNews')} viewAll />
+      <BlockHeader title={t('_.clubNews')} viewAll onClick={() => navigate(RoutePath.Articles)} />
+
       <div className="py-5 w-auto">
         {articles.length ? (
           <div className="w-full flex flex-col md:flex-row gap-3.5 md:gap-5 h-fit">

@@ -19,6 +19,7 @@ function Footer() {
 
           {sitemap.map((item) => (
             <Link
+              key={item.id}
               className={cn(
                 'text-base font-normal whitespace-nowrap hover:text-primary-accent',
                 'transition-colors duration-200',

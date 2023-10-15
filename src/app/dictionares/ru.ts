@@ -6,5 +6,6 @@ export default {
     coaches: 'Преподавательский состав',
     contacts: 'Контакты',
     sitemap: 'Карта сайта',
+    gallery: 'Фотогалерея',
   },
 };

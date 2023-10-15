@@ -10,10 +10,13 @@ import {
 import { Partner } from '@entities/partner';
 import { CoachesBlock } from '@features/CoachesBlock';
 import { ContactsBlock } from '@features/ContactsBlock';
+import { GalleryBlock } from '@features/GalleryBlock';
 import { HomeCard } from '@features/HomeCard';
 import { NewsBlock, NewsBlockSkeleton } from '@features/NewsBlock';
 import { PartnersBlock } from '@features/PartnersBlock';
 import { Suspense, useMemo } from 'react';
+
+import GalleryBlockSkeleton from '../../features/GalleryBlock/GalleryBlockSkeleton.tsx';
 
 function HomePage() {
   const { data } = useFetchPageByPathQuery(currentPath());
@@ -49,6 +52,11 @@ function HomePage() {
       </Suspense>
 
       <CoachesBlock items={coaches} />
+
+      <Suspense fallback={<GalleryBlockSkeleton />}>
+        <GalleryBlock />
+      </Suspense>
+
       <ContactsBlock text={contacts.contacts} mapName={contacts.mapName} mapUrl={contacts.mapUrl} />
       <PartnersBlock items={partners} />
     </main>
