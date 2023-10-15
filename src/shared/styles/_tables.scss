@@ -1,0 +1,22 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  text-indent: 0 !important;
+}
+
+table tr {
+  background-color: #f8f8f8;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+@media screen and (max-width: 600px) {
+  figure.ck-table-resized {
+    overflow: scroll;
+  }
+}

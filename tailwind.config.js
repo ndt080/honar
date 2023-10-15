@@ -67,6 +67,9 @@ export default {
       backgroundImage: {
         tonal: 'linear-gradient(90deg,rgba(255,160,51,0.75),rgba(228,35,28,0.4))',
       },
+      backgroundPosition: {
+        preview: '0 30%',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },

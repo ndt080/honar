@@ -1,4 +1,5 @@
 @use "typography";
+@use "tables";
 
 @tailwind base;
 @tailwind components;
@@ -91,53 +92,6 @@ html, body, #root {
 * {
   box-sizing: border-box;
 }
-
-.text-with-links {
-  a {
-    color: hsl(9, 100%, 56%);
-    font-weight: 600;
-    transition: color 0.2s;
-
-    &:hover {
-      color: hsl(38, 100%, 52%);
-      transition: color 0.2s;
-    }
-  }
-}
-
-.text-with-paragraphs {
-  text-indent: 24px;
-
-  p {
-    display: block;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-  }
-}
-
-.text-with-list {
-  ol {
-    list-style-type: decimal;
-    list-style-position: inside;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-.text-with-images {
-  figure {
-    padding: 20px;
-  }
-
-  img {
-    margin: 0 auto;
-    border-radius: 0.25rem;
-    max-width: 600px;
-  }
-}
-
 
 .image-style-align {
   &-left {

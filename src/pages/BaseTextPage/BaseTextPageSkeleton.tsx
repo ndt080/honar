@@ -3,7 +3,7 @@ import { Skeleton } from '@shared/ui/lib/skeleton.tsx';
 
 const SKELETON_ITEMS = Array.from({ length: 5 }, (_, i) => i);
 
-function KaratePageSkeleton() {
+function BaseTextPageSkeleton() {
   return (
     <main className="bg-white h-full pt-2.5 flex flex-col gap-10">
       <PreviewCardSkeleton className="h-[220px] md:h-[320px] mt-2.5" />
@@ -24,4 +24,4 @@ function KaratePageSkeleton() {
   );
 }
 
-export default KaratePageSkeleton;
+export default BaseTextPageSkeleton;

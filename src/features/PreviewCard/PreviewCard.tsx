@@ -17,15 +17,13 @@ function PreviewCard({ className, title, description, image, size = 'lg' }: Home
   return (
     <div
       className={cn(
-        'flex items-end w-full h-full overflow-hidden rounded-2xl shadow select-none',
+        'flex items-end w-full h-full overflow-hidden rounded-2xl shadow select-none !bg-cover !bg-preview',
         className,
       )}
       style={{
         background: `linear-gradient(90deg, rgba(255, 160, 51, 0.9), rgba(228, 35, 28, 0.6)), url("${
           image ? urlJoin(import.meta.env.VITE_MEDIA_URL, image) : '/images/header.webp'
         }") no-repeat`,
-        backgroundPosition: '0 30%',
-        backgroundSize: 'cover',
       }}
     >
       <div className="flex flex-col gap-2.5 w-full h-fit text-black m-5 md:m-10">
