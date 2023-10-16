@@ -102,3 +102,17 @@ html, body, #root {
     float: right;
   }
 }
+
+.infinity-loader-trigger {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 1px;
+  clear: both;
+  transition: all 400ms ease-in-out;
+}
+
+.infinity-loader-trigger.complete {
+  height: 0 !important;
+  transition: all 400ms ease-in-out;
+}

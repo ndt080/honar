@@ -9,11 +9,8 @@ export const articleApi = createApi({
   refetchOnMountOrArgChange: false,
   baseQuery: fetchBaseQuery({}),
   endpoints: (builder) => ({
-    fetchArticles: builder.query<Article[], string>({
-      query: () => ({ url: ENDPOINTS.ARTICLE_LIST }),
-      transformResponse({ data }: PagingData<Article>) {
-        return data;
-      },
+    fetchArticles: builder.query<PagingData<Article>, string>({
+      query: (page = '1') => ({ url: ENDPOINTS.ARTICLE_LIST.replace(':page', page) }),
     }),
     fetchLatestArticles: builder.query<Article[], string>({
       query: () => ({ url: ENDPOINTS.LATEST_ARTICLE_LIST }),
