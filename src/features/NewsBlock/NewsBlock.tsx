@@ -15,7 +15,7 @@ function NewsBlock() {
   return isLoading ? (
     <NewsBlockSkeleton />
   ) : (
-    <div className="block w-full">
+    <div className="w-full">
       <BlockHeader title={t('_.clubNews')} viewAll onClick={() => navigate(RoutePath.Articles)} />
 
       <div className="py-5 w-auto">

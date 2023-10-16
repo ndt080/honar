@@ -7,5 +7,6 @@ export default {
     contacts: 'Контакты',
     sitemap: 'Карта сайта',
     gallery: 'Фотогалерея',
+    otherNews: 'Может быть интересно',
   },
 };
