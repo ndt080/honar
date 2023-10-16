@@ -1,5 +1,5 @@
-import { Navbar, NavbarButton, NavbarSkeleton, RoutePath } from '@processes/navigation';
-import { Suspense, useState } from 'react';
+import { Navbar, NavbarButton, RoutePath } from '@processes/navigation';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
@@ -14,9 +14,7 @@ function Header() {
 
       <div className="flex items-center justify-between md:justify-center gap-3 w-full h-full flex-grow">
         <div className="flex items-center justify-center w-full h-fit">
-          <Suspense fallback={<NavbarSkeleton />}>
-            <Navbar open={open} onClose={() => setOpen(false)} />
-          </Suspense>
+          <Navbar open={open} onClose={() => setOpen(false)} />
         </div>
 
         <NavbarButton className="md:hidden" open={open} onClick={() => setOpen(!open)} />

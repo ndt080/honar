@@ -8,4 +8,5 @@ export default [
   { path: RoutePath.Druzhina, lazy: () => import('@pages/BaseTextPage/BaseTextPage.tsx') },
   { path: RoutePath.Schedule, lazy: () => import('@pages/BaseTextPage/BaseTextPage.tsx') },
   { path: RoutePath.About, lazy: () => import('@pages/BaseTextPage/BaseTextPage.tsx') },
+  { path: RoutePath.Article, lazy: () => import('@pages/ArticlePage/ArticlePage.tsx') },
 ] satisfies RouteObject[];

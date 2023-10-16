@@ -4,7 +4,7 @@ import { RoutePath } from '@processes/navigation';
 import { cn } from '@shared/utils';
 import * as dayjs from 'dayjs';
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import urlJoin from 'url-join';
 
 export interface NewsCardProps {
@@ -26,14 +26,9 @@ function NewsCard({
   publishedAt,
   size = 'sm',
 }: NewsCardProps) {
-  const navigate = useNavigate();
-
   const descriptionText = useMemo(() => htmlToText(description), [description]);
   const dateText = useMemo(() => dayjs(publishedAt).format('MMMM DD, YYYY'), [publishedAt]);
-
-  const toArticle = () => {
-    navigate(RoutePath.Article.replace(':id', String(id)));
-  };
+  const articleLink = RoutePath.Article.replace(':id', String(id));
 
   return (
     <article className={cn('w-full flex flex-col gap-1.5', className)}>
@@ -56,7 +51,7 @@ function NewsCard({
           {dateText}
         </div>
 
-        <div
+        <NavLink
           className={cn(
             'inline-block',
             'text-black font-semibold uppercase line-clamp-2 whitespace-normal',
@@ -64,11 +59,11 @@ function NewsCard({
             size === 'sm' && 'text-sm',
             size === 'lg' && 'text-sm md:text-xl',
           )}
-          onClick={toArticle}
+          to={articleLink}
         >
           {title}
           <ArrowUpRightIcon className="w-[14px] inline ml-1.5" />
-        </div>
+        </NavLink>
 
         <div
           className={cn(

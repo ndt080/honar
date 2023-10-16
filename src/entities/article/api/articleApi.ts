@@ -23,6 +23,9 @@ export const articleApi = createApi({
     }),
     fetchArticle: builder.query<Article, string>({
       query: (id: string) => ({ url: ENDPOINTS.ARTICLE.replace(':id', id) }),
+      transformResponse({ data }: { data: Article }) {
+        return data;
+      },
     }),
   }),
 });
