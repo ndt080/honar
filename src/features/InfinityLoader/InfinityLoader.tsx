@@ -72,6 +72,7 @@ function InfinityLoader({
     const { scrollHeight: contentHeight } = contentRef.current;
     const { scrollHeight: triggerHeight } = triggerRef.current;
 
+    console.log(triggerHeight + contentHeight, scrollHeight);
     if (triggerHeight + contentHeight <= scrollHeight || !contentHeight) {
       onLoad?.(loaderInstance);
       updateState('loading');

@@ -1,7 +1,7 @@
-import { htmlToText } from '@app/helpers';
+import { htmlToText, normalizeTextMedia } from '@app/helpers';
 import { useFetchArticleQuery } from '@entities/article';
 import { cn } from '@shared/utils';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import { CSSProperties } from 'react';
 import { useParams } from 'react-router-dom';
 import urlJoin from 'url-join';
@@ -43,7 +43,7 @@ function ArticlePage() {
       <main className="w-full md:max-w-[85%]">
         <div
           className="text-with-images text-with-links text-with-paragraphs text-with-paragraphs"
-          dangerouslySetInnerHTML={{ __html: content }}
+          dangerouslySetInnerHTML={{ __html: normalizeTextMedia(content) }}
         />
       </main>
     </article>

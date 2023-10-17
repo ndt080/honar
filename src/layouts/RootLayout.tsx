@@ -1,16 +1,15 @@
 import { Footer } from '@features/Footer';
 import { Header } from '@features/Header';
+import { ScrollArea } from '@shared/ui/lib/scroll-area.tsx';
 import { Outlet } from 'react-router-dom';
 
 function RootLayout() {
   return (
-    <div className="w-screen h-full flex justify-center items-start overflow-x-hidden">
-      <div className="max-w-screen-2xl w-full h-full grid grid-rows-[auto_1fr_auto] grid-cols-1 px-[12px]">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    </div>
+    <ScrollArea className="relative w-full h-full flex justify-center items-start layout">
+      <Header />
+      <Outlet />
+      <Footer />
+    </ScrollArea>
   );
 }
 

@@ -7,11 +7,9 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "types": [
-      "server/pb_data/types.d.ts"
-    ],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["vite/client", "vite-plugin-pwa/client"],
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

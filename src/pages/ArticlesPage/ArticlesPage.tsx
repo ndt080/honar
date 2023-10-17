@@ -30,7 +30,7 @@ function ArticlesPage() {
       setHeaderArticles(items.slice(0, 4));
       setMainArticles(items.slice(4, Infinity));
     } else {
-      setMainArticles([...mainArticles, ...items]);
+      setMainArticles(Array.from(new Set([...mainArticles, ...items]).values()));
     }
   }, [data]);
 
@@ -90,9 +90,9 @@ function ArticlesPage() {
 
       <BlockHeader title={t('_.otherNews')} />
 
-      <div className="w-full h-full">
+      <div className="relative w-full h-full flex flex-col">
         <div className="w-full h-full">
-          <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 py-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 py-5">
             {mainArticles.map(({ title, publishedAt, description, image, id }) => (
               <NewsCard
                 key={`card-${id}`}

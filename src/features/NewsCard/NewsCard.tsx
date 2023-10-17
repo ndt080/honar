@@ -2,7 +2,7 @@ import { htmlToText } from '@app/helpers';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import { RoutePath } from '@processes/navigation';
 import { cn } from '@shared/utils';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
 import urlJoin from 'url-join';
@@ -32,13 +32,10 @@ function NewsCard({
 
   return (
     <article className={cn('w-full flex flex-col gap-1.5', className)}>
-      <div className="aspect-[16/8] w-full h-full rounded overflow-hidden">
-        <img
-          className="object-cover object-center w-full h-full"
-          src={urlJoin(import.meta.env.VITE_MEDIA_URL, image)}
-          alt="preview"
-        />
-      </div>
+      <div
+        className="card-image-ratio w-full h-full rounded overflow-hidden !bg-cover !bg-center"
+        style={{ background: `url(${urlJoin(import.meta.env.VITE_MEDIA_URL, image)})` }}
+      />
 
       <div className="flex flex-col">
         <div
