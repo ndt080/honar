@@ -26,8 +26,8 @@ function CoachCard({ name, dan, description, position, image }: CoachCardProps) 
 
       <div className="w-full text-black">
         <div className="text-xl md:text-2xl font-semibold">{name}</div>
-        <div className="text-sm md:text-base py-2">{dan}</div>
-        <div className="text-sm md:text-base font-semibold pb-2">{position}</div>
+        <div className="text-sm md:text-base py-1.5">{dan}</div>
+        <div className="text-sm md:text-sm font-semibold pb-2">{position}</div>
         <div className="text-xs md:text-sm">{descriptionText}</div>
       </div>
     </div>

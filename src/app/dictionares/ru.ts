@@ -1,9 +1,9 @@
 export default {
   _: {
-    clubNews: 'Новости клуба',
+    clubNews: 'Новости проекта',
     viewAll: 'Показать все',
     partners: 'Наши партнёры',
-    coaches: 'Преподавательский состав',
+    coaches: 'Наша команда',
     contacts: 'Контакты',
     sitemap: 'Карта сайта',
     gallery: 'Фотогалерея',
