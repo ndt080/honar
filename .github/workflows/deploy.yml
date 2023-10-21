@@ -52,5 +52,6 @@ jobs:
           password: ${{ secrets.SSH_PASS }}
           port: ${{ secrets.SSH_PORT }}
           target: ${{ vars.PROJECT_DIR }}
-          source: "./*"
+          source: dist/*
           rm: true
+          strip_components: 1
