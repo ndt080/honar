@@ -40,8 +40,10 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run build        
-
+        run: |
+          pnpm run build        
+          cd dist
+        
       - name: Connect by SSH and move build files
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -50,5 +52,5 @@ jobs:
           password: ${{ secrets.SSH_PASS }}
           port: ${{ secrets.SSH_PORT }}
           target: ${{ vars.PROJECT_DIR }}
-          source: dist/*
+          source: "./*"
           rm: true
