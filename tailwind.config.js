@@ -69,6 +69,7 @@ export default {
       },
       backgroundPosition: {
         preview: '0 30%',
+        'preview-sm': 'center 30%',
         article: 'center 40%',
       },
       keyframes: {

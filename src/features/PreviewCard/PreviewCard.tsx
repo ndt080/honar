@@ -17,7 +17,7 @@ function PreviewCard({ className, title, description, image, size = 'lg' }: Home
   return (
     <div
       className={cn(
-        'flex items-end w-full h-full overflow-hidden rounded-2xl shadow select-none !bg-cover !bg-preview',
+        'flex items-end w-full h-full overflow-hidden rounded-2xl shadow select-none !bg-cover !bg-preview-sm md:!bg-preview',
         className,
       )}
       style={{
