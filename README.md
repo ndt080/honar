@@ -6,8 +6,7 @@ Powerful Honar Sports Club website on React, Tailwind CSS, Radix UI, Zustand and
 - 💃 Tailwind CSS
 - ⚡️ Feature-Sliced Design
 - ⚡️ Radix UI primitives
-- ⚡️ Internationalization
-- 🐻 Zustand
+- 🐻 Internationalization
 - 🐁 RTK Query
 
 ## Contributors
