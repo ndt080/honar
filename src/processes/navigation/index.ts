@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { default as Navbar } from './components/Navbar.tsx';
 import { default as NavbarButton } from './components/NavbarButton.tsx';
 import { default as NavbarSkeleton } from './components/NavbarSkeleton.tsx';
+import { ScrollToTop } from './components/ScrollToTop.tsx';
 import { RoutePath } from './values/routePath';
 
 const Router = createBrowserRouter([
@@ -14,4 +15,4 @@ const Router = createBrowserRouter([
   },
 ]);
 
-export { Navbar, NavbarButton, NavbarSkeleton, RoutePath, Router };
+export { Navbar, NavbarButton, NavbarSkeleton, RoutePath, Router,ScrollToTop };

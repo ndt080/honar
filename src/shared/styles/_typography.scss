@@ -14,12 +14,12 @@
 }
 
 .text-with-paragraphs {
-  text-indent: 24px;
+  text-indent: 0;
 
   p {
     display: block;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
+    margin-block-start: 0;
+    margin-block-end: 1.25em;
     margin-inline-start: 0;
     margin-inline-end: 0;
   }
@@ -42,16 +42,20 @@
 
 .text-with-images {
   figure {
-    padding: 20px;
+    padding: 0;
   }
 
   img {
-    margin: 0 auto;
-    border-radius: 0.25rem;
-    max-width: 600px;
+    margin: 32px auto;
+    border-radius: 0.75rem;
+    max-width: 100%;
     width: 100%;
     height: 100%;
-    max-height: 400px;
+    max-height: 600px;
     object-fit: cover;
+
+    @media screen and (max-width: 1024px) {
+      max-height: 400px;
+    }
   }
 }

@@ -1,16 +1,19 @@
 import { currentPath } from '@app/helpers';
 import { useFetchPageByPathQuery } from '@entities/page';
 import { PreviewCard } from '@features/PreviewCard';
+import { RoutePath } from '@processes/navigation';
+import { cn } from '@shared/utils';
 
 import BaseTextPageSkeleton from './BaseTextPageSkeleton.tsx';
 
 function BaseTextPage() {
-  const { data, isLoading } = useFetchPageByPathQuery(currentPath());
+  const path = currentPath();
+  const { data, isLoading } = useFetchPageByPathQuery(path);
 
   return isLoading ? (
     <BaseTextPageSkeleton />
   ) : (
-    <main className="bg-white h-full pt-2.5 flex flex-col gap-10">
+    <article className="bg-white w-full h-full pt-2.5 text-black flex flex-col items-center gap-10">
       <PreviewCard
         className="h-[220px] md:h-[320px] mt-2.5"
         title={data?.title ?? ''}
@@ -18,11 +21,14 @@ function BaseTextPage() {
         image={data?.preview?.url}
         size="sm"
       />
-      <div
-        className="text-with-links text-with-images text-with-paragraphs text-with-list text-base px-2.5 overflow-x-auto"
-        dangerouslySetInnerHTML={{ __html: data?.content ?? '' }}
-      />
-    </main>
+
+      <main className={cn('w-full', path !== RoutePath.Schedule && 'md:max-w-[756px]')}>
+        <div
+          className="text-with-images text-with-links text-with-paragraphs text-with-paragraphs"
+          dangerouslySetInnerHTML={{ __html: data?.content ?? '' }}
+        />
+      </main>
+    </article>
   );
 }
 

@@ -19,7 +19,7 @@ function ArticlePageSkeleton() {
         </div>
       </Skeleton>
 
-      <main className="w-full md:max-w-[85%]">
+      <main className="w-full md:max-w-[756px]">
         <div className="flex flex-col w-full gap-2.5">
           {SKELETON_ITEMS.map((item) => (
             <Skeleton key={item} className="w-full h-[20px]" />
