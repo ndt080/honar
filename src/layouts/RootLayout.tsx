@@ -1,15 +1,16 @@
 import { Footer } from '@features/Footer';
 import { Header } from '@features/Header';
-import { ScrollArea } from '@shared/ui/lib/scroll-area.tsx';
+import { ScrollToTop } from '@processes/navigation';
 import { Outlet } from 'react-router-dom';
 
 function RootLayout() {
   return (
-    <ScrollArea className="relative w-full h-full flex justify-center items-start layout">
+    <div className="w-full h-full layout">
       <Header />
       <Outlet />
       <Footer />
-    </ScrollArea>
+      <ScrollToTop />
+    </div>
   );
 }
 

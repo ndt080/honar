@@ -23,8 +23,8 @@ function Navbar({ open = false, onClose }: NavbarProps) {
       ref={elRef}
       className={cn(
         'fixed right-0 left-0 top-[60px] invisible opacity-0 transition-all scale-0',
-        'block list-none w-full leading-[1] flex-wrap justify-center items-center gap-1',
-        'md:relative md:top-auto md:flex md:visible md:opacity-100 md:scale-100 z-40',
+        'block list-none w-full leading-[1] flex-wrap justify-center items-center gap-x-1',
+        'md:relative md:top-auto md:flex md:visible md:opacity-100 md:scale-100 z-40 md:py-2.5',
         open && 'visible opacity-100 bg-background p-2.5 scale-100',
       )}
     >

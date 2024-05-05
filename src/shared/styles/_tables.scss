@@ -5,6 +5,10 @@ table {
   text-indent: 0 !important;
 }
 
+table.table, figure.table {
+  width: 100% !important;
+}
+
 table tr {
   background-color: #f8f8f8;
 }

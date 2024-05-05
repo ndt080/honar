@@ -21,23 +21,11 @@ function NewsBlock() {
       <div className="py-5 w-auto">
         {articles.length ? (
           <div className="w-full flex flex-col md:flex-row gap-3.5 md:gap-5 h-fit">
-            <div className="flex-grow">
-              <NewsCard
-                id={articles[0].id}
-                title={articles[0].title}
-                image={articles[0].image.url}
-                publishedAt={articles[0].publishedAt}
-                description={articles[0].description}
-                size="lg"
-              />
-            </div>
-
-            <Separator className="hidden md:block bg-primary/10 h-auto" orientation="vertical" />
-
-            <div className="flex flex-col gap-3.5 w-full md:w-[300px] md:min-w-[300px]">
+            <div className="flex flex-col gap-3.5 w-full md:w-[200px] md:min-w-[200px]">
               {articles.map(({ title, publishedAt, description, image, id }, index) => {
                 return index > 0 ? (
                   <NewsCard
+                    imgClassName="aspect-[16/7]"
                     key={id}
                     id={id}
                     title={title}
@@ -47,6 +35,19 @@ function NewsBlock() {
                   />
                 ) : null;
               })}
+            </div>
+
+            <Separator className="hidden md:block bg-primary/10 h-auto" orientation="vertical" />
+
+            <div className="flex-grow">
+              <NewsCard
+                id={articles[0].id}
+                title={articles[0].title}
+                image={articles[0].image.url}
+                publishedAt={articles[0].publishedAt}
+                description={articles[0].description}
+                size="lg"
+              />
             </div>
           </div>
         ) : null}

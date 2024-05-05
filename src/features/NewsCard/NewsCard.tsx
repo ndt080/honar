@@ -10,6 +10,7 @@ import urlJoin from 'url-join';
 export interface NewsCardProps {
   id: number | string;
   className?: string;
+  imgClassName?: string;
   title: string;
   image: string;
   description: string;
@@ -19,6 +20,7 @@ export interface NewsCardProps {
 
 function NewsCard({
   className,
+  imgClassName,
   id,
   title,
   description,
@@ -31,11 +33,16 @@ function NewsCard({
   const articleLink = RoutePath.Article.replace(':id', String(id));
 
   return (
-    <article className={cn('w-full flex flex-col gap-1.5', className)}>
-      <div
-        className="card-image-ratio w-full h-full rounded overflow-hidden !bg-cover !bg-center"
-        style={{ background: `url(${urlJoin(import.meta.env.VITE_MEDIA_URL, image)})` }}
-      />
+    <article className={cn('w-full h-full flex flex-col gap-1.5', className)}>
+      <picture>
+        <img
+          className={cn(
+            'aspect-[16/8] rounded object-cover object-center w-full max-h-full grow',
+            imgClassName,
+          )}
+          src={urlJoin(import.meta.env.VITE_MEDIA_URL, image)}
+        />
+      </picture>
 
       <div className="flex flex-col">
         <div

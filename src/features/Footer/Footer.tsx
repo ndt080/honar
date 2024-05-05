@@ -32,7 +32,7 @@ function Footer() {
         </div>
 
         <div className="w-full max-w-[300px]">
-          <img className="w-full" src="/images/logo.png" alt="logo" />
+          <img className="w-full" src="/images/logo.svg" alt="logo" />
         </div>
 
         <div className="w-full max-w-[760px] text-with-links">

@@ -92,12 +92,13 @@ function ArticlesPage() {
 
       <div className="relative w-full h-full flex flex-col">
         <div className="w-full h-full">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 py-5">
+          <div className="flex flex-wrap justify-center gap-3.5 py-5 contain-paint">
             {mainArticles.map(({ title, publishedAt, description, image, id }) => (
               <NewsCard
                 key={`card-${id}`}
                 id={id}
                 title={title}
+                className="max-w-[45%] lg:max-w-[30%]"
                 image={image.url}
                 publishedAt={publishedAt}
                 description={description}
