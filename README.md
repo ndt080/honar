@@ -9,5 +9,5 @@ Powerful Honar Sports Club website on React, Tailwind CSS, Radix UI, Zustand and
 - 🐻 Internationalization
 - 🐁 RTK Query
 
-## Contributors
+## Contributors 
 @ndt080 | Andrei Piatrou
